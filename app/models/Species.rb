@@ -1,3 +1,3 @@
 class Species < ActiveRecord::Base
-    belong_to :animal
+    belongs_to :animal
 end
