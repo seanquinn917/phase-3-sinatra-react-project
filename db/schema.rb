@@ -10,21 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_18_151220) do
-
-  create_table "animals", force: :cascade do |t|
-    t.string "name"
-    t.integer "zoo_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "zoos", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.integer "population"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2023_10_21_185145) do
 
 end

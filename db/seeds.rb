@@ -7,8 +7,15 @@ Zoo.create(name: "Central Park Zoo", location: "Manhattan, New York", population
 Zoo.create(name: "Staten Island Zoo", location: "Staten Island, New York", population: 1400)
 Zoo.create(name: "Propect Park Zoo", location: "Brooklyn New York", population: 864)
 
+# 50.times do 
+#     Animal.create(
+#         name: Faker::Creature::Animal.name,
+#         zoo_id: Zoo.id
+#     )
+# end
 
 
+Animal.create(name: "Bear", )
 
 
 puts "✅ Done seeding!"
