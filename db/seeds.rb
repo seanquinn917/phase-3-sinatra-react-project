@@ -13,12 +13,13 @@ Restaurant.create(name: "Pineapple's Bar and Grill", location: "Chicago, Illinoi
 
 
 Restaurant.all.each do |restaurant|
-    Review.create(
-        rating: rand(1...5),
+    5.times do
+        Review.create(
         comment: Faker::Restaurant.review,
         restaurant_id: restaurant.id,
         )
     end 
+end
 
 
 puts "✅ Done seeding!"
