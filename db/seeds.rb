@@ -1,22 +1,22 @@
 
 puts "🌱 Seeding spices..."
 
-Hotel.create(name: "The Crosby Hotel", location: "New York, New York", price: rand(500-900))
-Hotel.create(name: "The Whitby Hotel", location: "New York, New York", price: rand(500-900))
-Hotel.create(name: "The Millenium Hilton", location: "New York, New York", price: rand(500-900))
-Hotel.create(name: "The Marker San Fransisco", location: "San Fransisco, California", price: rand(500-900))
-Hotel.create(name: "Hotel G", location: "San Fransisco, California", price: rand(500-900))
-Hotel.create(name: "Hotel Zephyr", location: "San Fransisco, California", price: rand(500-900))
-Hotel.create(name: "The Drake Hotel", location: "Chicago, Illinois", price: rand(500-900))
-Hotel.create(name: "The Godfrey Hotel", location: "Chicago, Illinois", price: rand(500-900))
-Hotel.create(name: "StayPineapple", location: "Chicago, Illinois", price: rand(500-900))
+Restaurant.create(name: "The Olive Garden", location: "New York, New York", price: "$$")
+Restaurant.create(name: "Taverna Kyclades", location: "Astoria, New York", price: "$$$$")
+Restaurant.create(name: "Tasty's", location: "Astoria, New York", price: "$$")
+Restaurant.create(name: "The Ground Round", location: "San Fransisco, California", price: "$$$")
+Restaurant.create(name: "The G", location: "San Fransisco, California", price: "$$$$")
+Restaurant.create(name: "The Restaurant at the Zephyr", location: "San Fransisco, California", price: "$$")
+Restaurant.create(name: "The Drake", location: "Chicago, Illinois", price: "$$$")
+Restaurant.create(name: "The Godfrey Grill", location: "Chicago, Illinois", price: "$$$$$")
+Restaurant.create(name: "Pineapple's Bar and Grill", location: "Chicago, Illinois", price: "$$")
 
 
-Hotel.all.each do |hotel|
+Restaurant.all.each do |restaurant|
     Review.create(
         rating: rand(1...5),
-        comment: Faker::Lorem.sentence,
-        hotel_id: hotel.id,
+        comment: Faker::Restaurant.review,
+        restaurant_id: restaurant.id,
         )
     end 
 

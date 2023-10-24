@@ -6,8 +6,8 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
-  get '/hotels' do
-    hotel = Hotel.all
+  get '/restaurants' do
+    hotel = Restaurant.all
     hotel.to_json(include: :reviews)
   end
 
