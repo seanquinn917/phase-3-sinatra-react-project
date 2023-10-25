@@ -7,9 +7,34 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/restaurants' do
-    hotel = Restaurant.all
-    hotel.to_json(include: :reviews)
+    restaurant = Restaurant.all
+    restaurant.to_json(include: :reviews)
   end
+
+  post '/restaurants' do
+    restaurant = Restaurant.create(
+      name: params[:name],
+      location: params[:location],
+      price: params[:price]
+    )
+    restaurant.to_json
+  end
+
+  patch 'restaurants/:id' do
+    
+  end
+
+  get '/reviews' do
+    review = Review.all
+    review.to_json
+  end
+
+  get '/reviews/:id' do
+    review = Review.find(params[:id])
+    review.to_json
+  end 
+
+  
 
   post '/reviews' do
     review = Review.create(
