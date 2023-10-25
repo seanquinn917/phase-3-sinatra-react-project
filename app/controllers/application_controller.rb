@@ -21,7 +21,13 @@ class ApplicationController < Sinatra::Base
   end
 
   patch 'restaurants/:id' do
-    
+    restaurant= Restaurant.find(params[:id])
+    restaurant.update(
+      name: params[:name],
+      location: parama[:location],
+      price: params[:price]
+    )
+    review.to_json
   end
 
   get '/reviews' do
