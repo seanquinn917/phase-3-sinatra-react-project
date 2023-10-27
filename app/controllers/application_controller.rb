@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     restaurant.to_json(include: :reviews)
   end
 
+  get '/restaurants/:id' do
+    restaurant= Restaurant.find(params[:id])
+    restaurant.to_json(include: :reviews)
+  end
+
   post '/restaurants' do
     restaurant = Restaurant.create(
       name: params[:name],
@@ -21,7 +26,7 @@ class ApplicationController < Sinatra::Base
   end
 
   delete 'restaurants/:id' do
-    restaurant = restaurant.find(params[:id])
+    restaurant = Restaurant.find(params[:id])
     restaurant.destroy
     restaurant.to_json
   end
