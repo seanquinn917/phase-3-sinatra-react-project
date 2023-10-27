@@ -25,20 +25,20 @@ class ApplicationController < Sinatra::Base
     restaurant.to_json
   end
 
-  delete 'restaurants/:id' do
+  delete '/restaurants/:id' do
     restaurant = Restaurant.find(params[:id])
     restaurant.destroy
     restaurant.to_json
   end
 
-  patch 'restaurants/:id' do
+  patch '/restaurants/:id' do
     restaurant= Restaurant.find(params[:id])
     restaurant.update(
       name: params[:name],
-      location: parama[:location],
+      location: params[:location],
       price: params[:price]
     )
-    review.to_json
+    restaurant.to_json
   end
 
   get '/reviews' do
