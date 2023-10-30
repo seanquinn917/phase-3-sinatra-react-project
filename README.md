@@ -7,7 +7,7 @@ The back end of the Restaurant/Review application is built using Sinatra and uti
 
 ## Functionality
 
-With this application, a use is able to add or delete a restaurant to the database using a form. in addition to that, there is a form to update the restaurant's information.  There is full CRUD capability on the Restaurant Class. 
+With this application, a user is able to add or delete a restaurant to the database using a form. In addition to that, there is also a form to update the restaurant's information.  There is full CRUD capability on the Restaurant Class. 
 In regard to reviews, for each restaurant, a user can read all of the reviews, as well as add or delete a review.
 
 
