@@ -22,16 +22,16 @@ http://localhost:9292/   followed by either "/reviews" or "/restaurants" to view
 Active record
 from your terminal
 
-# returns 'restaurants'
+returns 'restaurants'
 restaurants.all
 
-# returns 'reviews'
+returns 'reviews'
 reviews.all
 
-# returns 'reviews/id'
+returns 'reviews/id'
 Review.find(insert review ID here)
 
-# returns 'restaurants/id'
+returns 'restaurants/id'
 Restaurant.find(insert restaurant ID here)
 
 ```
