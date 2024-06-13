@@ -22,13 +22,13 @@ class ApplicationController < Sinatra::Base
       location: params[:location],
       price: params[:price]
     )
-    restaurant.to_json
+    restaurant.to_json(include: :reviews)
   end
 
   delete '/restaurants/:id' do
     restaurant = Restaurant.find(params[:id])
     restaurant.destroy
-    restaurant.to_json
+    restaurant.to_json(include: :reviews)
   end
 
   patch '/restaurants/:id' do
@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
       location: params[:location],
       price: params[:price]
     )
-    restaurant.to_json
+    restaurant.to_json(include: :reviews)
   end
 
   get '/reviews' do
@@ -50,8 +50,6 @@ class ApplicationController < Sinatra::Base
     review = Review.find(params[:id])
     review.to_json
   end 
-
-  
 
   post '/reviews' do
     review = Review.create(
@@ -67,20 +65,6 @@ class ApplicationController < Sinatra::Base
       review.to_json
   end
 
-
-
-  # get '/hotels/:id/reviews' do 
-  #   hotel = Hotel.find(params[:id])
-  #   review = hotel.reviews.all
-  #   review.to_json
-  # end
-
-  # get '/hotels/:id' do
-  #   hotel = Hotel.find(params[:id])
-  #   hotel.to_json
-  # end
-
-  
 
 end
 
